@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'default';
+  src: url("../font/Nanum_Pen_Script/NanumPenScript-Regular.ttf") format('woff2')
+}
+
+
+.main-bg{
+    height: 300px;
+    width: 500px;
+    background-image: url('/src/img/notebook.png');
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    margin-top: 100px;
+  }
+
+.login-form{
+  margin: auto;
+  width: 500px;
+}
+
+.form-box{
+  width: 80%;
+  margin: auto;
+  font-family: "default";
+  font-size: 22px;
+}
+
+.form-label{
+  float:left;
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.form-control{
+  float:left;
+  width: 80%;
+  margin-bottom: 10px;
+  border-radius : 10px;
+}
+
+.form-btn{
+  font-family: "default";
+  font-size: 17px;
+  size: "lg";
+  background-color: coral;
+  width: 50%;
+  border-radius: 30px;
+  height: 40px;
+}
+.form-btn:hover{
+  background-color: chocolate;
+}
