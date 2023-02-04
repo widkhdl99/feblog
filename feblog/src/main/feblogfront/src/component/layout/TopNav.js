@@ -1,18 +1,48 @@
-import { Container, Nav, Navbar, ToggleButtonGroup  } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Button, Container, Form, Nav, Navbar, NavDropdown, ToggleButtonGroup } from "react-bootstrap";
+import "../../css/layout/TopNav.css"
+import SideNav from './SideNav';
 
 function TopNav() {
+
+    const [loginCheck, setLoginCheck] = useState(false);
+
+    useEffect(()=>{
+        if(localStorage.getItem("id") != null ){
+            setLoginCheck(true);
+        }
+    },[]);
+    
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <ToggleButtonGroup type="disabled">메뉴바</ToggleButtonGroup>
-                <Navbar.Brand href="#home">feBlog</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
+                <ToggleButtonGroup className="menuBar" type="disabled" md="1">--</ToggleButtonGroup>
+                <Navbar.Brand className="logo" href="#home" md="2">feBlog</Navbar.Brand>
+                
+                <Nav.Link className="blogName"href="#" disabled>
+                    블로그 이름
+                </Nav.Link>
+                <Nav.Link className="searchBar" href="#" md="3">
+                    <Form className="d-flex">
+                        <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <Button variant="outline-success">Search</Button>
+                    </Form>
+                </Nav.Link>
+                {/* <Button type="button" className="DocSearch DocSearch-Button searchBtn" aria-label="Search" variant="outline-success" >search</Button> */}
+                {/* <Nav.Link className="alarmBtn" href="#link" md="1">알람</Nav.Link> */}
+                <NavDropdown title="글쓰기" className="writeBtn" id="basic-nav-dropdown" md="2" >
+                    <NavDropdown.Item href="#action/3.1">블로그</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">메모장</NavDropdown.Item>
+                </NavDropdown>
+
+                
+
+
             </Container>
         </Navbar>
     )

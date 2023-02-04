@@ -1,0 +1,33 @@
+.menuBar{
+    float:left;
+    margin-left: 5%;
+    
+}
+.logo{
+    float:left;
+    margin-left: 5%;
+}
+
+.blogName{
+    float : center;
+    float:left;
+    margin-left: 5%;
+}
+
+
+.searchBar{
+    width: 25%;
+    float:left;
+    margin-left: 5%;
+}
+
+.writeBtn{
+    float:left;
+    margin-left: 5%;
+}
+
+.searchBtn {
+    border-radius: 40px;
+    width: 80%;
+    background-color:rgba(185, 182, 182, 0.8);/*까만색(0,0,0) 80% 불투명도*/
+}
